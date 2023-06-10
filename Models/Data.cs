@@ -41,5 +41,12 @@ namespace mvcmin.Models
     //I could create other classes like Data in
     //the Models folder.
 
+    //A data class for use with an INPUT box
+    public class Subscribe
+    {
+        [Required]
+        public string? Email { get; set; }
+    }
+
     
 }

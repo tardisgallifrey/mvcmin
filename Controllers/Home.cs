@@ -98,7 +98,40 @@ public class Home : Controller
         //Easy way to fill an array
         mylist.number_array = Enumerable.Range(1, 10).ToList();
 
-        return View(mylist);
+        //check to be sure array isn't null
+        //However, view doesn't know this is done,
+        //so add ! to end of anything using number_array
+        return mylist.number_array != null ? View(mylist) : Problem("array is null");
+    }
+
+
+    //Create a method that calls a view
+    //that allows us to get an input 
+    //Uses the Subscribe data model (with email)
+    //to create object to send to View
+    //See Input View file
+    public IActionResult Input()
+    {
+        var mymodel = new Subscribe();
+
+        return View(mymodel);
+    }
+
+    //Create a method to receive data from
+    //Input method above and write its own View page
+    //Input View calls this method to receive 
+    //entered data.
+    //for simplicity, we simply set a 
+    //ViewData message with the value.
+    public IActionResult SubscribeMe(Subscribe model)
+    {
+        if (ModelState.IsValid)
+        {
+            ViewData["email"] = model.Email;
+        }
+
+        //SubscribeMe view doesn't need a model sent
+        return View();
     }
 
 }

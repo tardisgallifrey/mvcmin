@@ -10,8 +10,12 @@
 <div>
     <h1>@ViewData["Title"]</h1>
     <ul>
-    @foreach (var item in Model.number_array)
+    @foreach (var item in Model.number_array!)
     {
+        //The ! used above is to tell 
+        //the compiler that I know this
+        //is not a null array.  I made sure
+        //of that before sending.
         <li>Number in range: @item</li>
     }
     </ul>

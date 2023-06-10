@@ -1,0 +1,15 @@
+@model mvcmin.Models.Subscribe;
+
+@{
+    Layout="_Layout";
+    ViewData["Title"] = "Enter your Email Address";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@using (Html.BeginForm("SubscribeMe", "Home", FormMethod.Post))
+{
+    @Html.TextBoxFor(model => model.Email!);
+    @Html.ValidationMessageFor(model => model.Email!);
+    <button type="submit">Subscribe</button>
+}

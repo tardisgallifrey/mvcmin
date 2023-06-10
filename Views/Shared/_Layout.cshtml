@@ -7,14 +7,23 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
+    <nav class="menu">
+        <ul>
+            <li><a href="http://localhost:5284">Home</a></li>
+            <li><a href="http://localhost:5284/home/welcome?name=Dave&numtimes=6">Welcome</a></li>
+            <li><a href="http://localhost:5284/home/addup">Add Up</a></li>
+            <li><a href="http://localhost:5284/home/arraylist">Array List</a></li>
+            <li><a href="http://localhost:5284/home/input">Enter Email</a></li>
+        </ul>
+    </nav>
     <div>
-        <main role="main">
+        <main role="main" class="content">
             @RenderBody()
         </main>
     </div>
-    <div>
+    <footer>
         &copy; Me, myself, I - <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-    </div>
+    </footer>
    
     <script src="~/js/site.js" asp-append-version="true"></script>
 
