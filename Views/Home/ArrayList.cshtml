@@ -1,0 +1,18 @@
+@model mvcmin.Models.Variables;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+
+@{
+    Layout="_Layout";
+    ViewData["Title"] = "Handling Arrays";
+}
+
+<div>
+    <h1>@ViewData["Title"]</h1>
+    <ul>
+    @foreach (var item in Model.number_array)
+    {
+        <li>Number in range: @item</li>
+    }
+    </ul>
+</div>
