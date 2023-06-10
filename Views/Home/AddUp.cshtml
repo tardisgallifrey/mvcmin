@@ -1,0 +1,24 @@
+@model mvcmin.Models.Variables; //included to use num1
+
+
+@{
+    Layout= "_Layout";
+    ViewData["Title"] = "AddUp Page";
+}
+
+<div>
+    <h1>@ViewData["Title"]</h1>
+    <h2>The time on the server is @DateTime.Now</h2>
+    <p>The ViewData number is: @ViewData["number1"]</p>
+    @{ 
+        //We use the @Model imported above giving us
+        //access to the num1 variable that was sent
+        //by the View(myvar) method in the AddUp
+        //method of the controller
+
+        //The ToString isn't necessary but used to 
+        //show flexibility 
+    }
+    <p>The myvar.num1 passed in is: @Model.num1.ToString() </p>
+</div>
+

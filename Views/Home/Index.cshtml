@@ -1,7 +1,17 @@
 
 @{
+    //This little structure we are in, 
+    //the @{ }, can be used anywhere on this 
+    //page that we need C# code.
+    
     //Do NOT treat MVC Views as Razor Pages
     //No @page goes above
+
+    //Rather than have this instruction in a 
+    //separate cshtml file and imported,
+    //it's just as easy to put it in each page,
+    //plus, you can use different layouts, if  you
+    //wish.   Note: the quotes are required.
     Layout = "_Layout";
     ViewData["Title"] = "Home Page";
 
