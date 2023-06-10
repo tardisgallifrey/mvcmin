@@ -1,0 +1,16 @@
+
+@{
+    //Do NOT treat MVC Views as Razor Pages
+    //No @page goes above
+    Layout = "_Layout";
+    ViewData["Title"] = "Home Page";
+
+    //Pay attention to anything below with @
+    //They are variables of some type
+}
+
+
+<div>
+    <h1>@ViewData["Title"]</h1>
+    <h2>The time on the server is @DateTime.Now</h2>
+</div>
